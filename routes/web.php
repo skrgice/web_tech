@@ -24,8 +24,11 @@ Route::get('register/verify/{token}', 'Auth\RegisterController@verify');
 
 Route::get('/showNewAd', function()
 {
-    return view('ads\create');
+    return view('ads/create');
 });
+
+Route::post('/insert_ad', 'AdsController@insert_ad');
+
 
 
 
