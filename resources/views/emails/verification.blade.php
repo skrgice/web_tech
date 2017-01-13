@@ -71,14 +71,15 @@ $style = [
                                     <td style="{{ $fontFamily }} {{ $style['email-body_cell'] }}">
                                         <!-- Greeting -->
                                         <h1 style="{{ $style['header-1'] }}">
-                                            Hello {{ $user->name }},
+                                            Hallo {{ $user->name }},
                                         </h1>
 
                                         <!-- Intro -->
 
                                             <p style="{{ $style['paragraph'] }}">
-                                                Click on the below button to verify your email address
-                                            </p>
+                                                herzlich Willkommen,
+
+                                                Um deine Registrierung bei Willnimmahaben abzuschließen und unseren Servis zu benutzen, klicke bitte auf folgenden Buttom:                                            </p>
 
 
                                         <!-- Action Button -->
@@ -94,7 +95,7 @@ $style = [
                                                             style="{{ $fontFamily }} {{ $style['button'] }} {{ $style[$actionColor] }}"
                                                             class="button"
                                                             target="_blank">
-                                                            Verify
+                                                            Aktivieren
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -104,13 +105,14 @@ $style = [
                                         <!-- Outro -->
 
                                             <p style="{{ $style['paragraph'] }}">
-                                                Thank you
+                                                Vielen Dank und
+
                                             </p>
 
 
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Regards,<br>{{ config('app.name') }}
+                                            liebe Grüße,<br>{{ config('app.name') }}
                                         </p>
                                     </td>
                                 </tr>
@@ -127,7 +129,7 @@ $style = [
                                         <p style="{{ $style['paragraph-sub'] }}">
                                             &copy; {{ date('Y') }}
                                             <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ config('app.name') }}</a>.
-                                            All rights reserved.
+                                            Alle Rechte vorbehalten.
                                         </p>
                                     </td>
                                 </tr>
