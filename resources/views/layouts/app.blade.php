@@ -59,6 +59,17 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+
+                                    <li>
+                                        <a href="{{ url('/showNewAd') }}"> Anzeige aufgeben
+
+                                        </a>
+
+
+
+                                        </form>
+                                    </li>
+
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
@@ -70,6 +81,8 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
+
                                 </ul>
                             </li>
                         @endif

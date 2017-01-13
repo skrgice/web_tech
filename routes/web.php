@@ -19,4 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('register/verify/{token}', 'Auth\RegisterController@verify'); 
+Route::get('register/verify/{token}', 'Auth\RegisterController@verify');
+
+
+Route::get('/showNewAd', function()
+{
+    return view('ads\create');
+});
+
+
+
