@@ -9,8 +9,11 @@
                     <div class="panel-heading">Anzeige aufgeben</div>
                     <div class="panel-body">
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/insert_ad') }}">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <form class="form-horizontal" role="form"  method="POST" enctype="multipart/form-data" action="{{ url('/insert_ad') }}">
+
+                            {{--<input type="hidden" name="_token" value="{{ csrf_field() }}">--}}
+
+
 
                             <div class="form-group">
                                 <label class="col-lg-1 control-label">Titel:</label>
@@ -105,6 +108,7 @@
                                 <label class="col-lg-1 control-label">Bild hochladen:</label>
                                 <div class="col-lg-10" style="padding-left: 50px">
 
+                                    {{csrf_field()}}
                                     <input type="file" name="file"/>
 
                                 </div>

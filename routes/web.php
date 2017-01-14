@@ -22,12 +22,20 @@ Route::get('/home', 'HomeController@index');
 Route::get('register/verify/{token}', 'Auth\RegisterController@verify');
 
 
+Route::get('ads', 'AdsController@index');
+
+
+
 Route::get('/showNewAd', function()
 {
     return view('ads/create');
 });
 
 Route::post('/insert_ad', 'AdsController@insert_ad');
+
+
+
+
 
 
 

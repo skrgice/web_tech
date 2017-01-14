@@ -30,7 +30,10 @@
 
                 </div>
                 <div class="panel-body">
-                   Sie sind Registriert!
+
+
+
+
                 </div>
             </div>
         </div>
