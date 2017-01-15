@@ -33,6 +33,21 @@ Route::get('/showNewAd', function()
 
 Route::post('/insert_ad', 'AdsController@insert_ad');
 
+Route::get('/profile', 'UserController@profile');
+
+
+
+
+
+
+Route::post('/profile', 'UserController@update_avatar');
+
+Route::post('/index', 'AdsController@showAds');
+
+
+
+
+
 
 
 

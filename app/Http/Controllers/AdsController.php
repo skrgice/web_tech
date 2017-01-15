@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use DB;
 use App\User;
+use Illuminate\Support\Facades\View;
+
+
 
 class AdsController extends Controller
 {
@@ -36,12 +39,17 @@ class AdsController extends Controller
         $ad->email = $request->get('email');
         $ad->name = $request->get('name');
         $ad->description = $request->get('description');
-        $ad->image = $request->file('file')->store('images');
+
+        $file = $request->file('file');
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $ad->image = $filename;
+
+        Image::make($file)->resize(550, 300)->save( public_path('uploads/ad/' . $filename ) );
 
 
         $ad->save();
 
-        return view('home');
+        return view('home')->with('ads', Ad::all());
 
 
 
@@ -49,9 +57,14 @@ class AdsController extends Controller
 
     public function index()
     {
-        $ads = Ad::all();
+        return View::make('index')
+            // all the bears (will also return the fish, trees, and picnics that belong to them)
+            ->with('users', User::all());
+    }
 
-        return View::make('home', compact('ads'));
+    public function showAds()
+    {
+        return View::make('index') -> with('ads', Ad::all());
     }
 
 
